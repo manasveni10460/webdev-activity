@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+  <style>
+    .grid-container {
+      display: grid;
+      width: 1200px;
+      height: 1000px;
+      border: 10px solid goldenrod; 
+      grid-template-columns: 1fr 2fr 1fr; 
+      grid-template-rows: 200px 1fr;     
+      margin: auto;
+      padding: 20px;
+      column-gap: 10px;
+    }
+
+    .header {
+      grid-column: 1 / 4;;
+      border: 10px solid purple;
+    }
+
+    .left {
+      border: 10px solid green;
+    }
+
+    .middle {
+      display: grid;
+      grid-template-rows: 1fr 1fr; /* two rows inside middle */
+      border: 10px solid blue;
+    }
+
+    .middle-top {
+      border-color: solid blue;
+      border-bottom: 10px solid blue;
+    }
+
+    .middle-bottom {
+      border: 2px solid blue;
+    }
+
+    .right {
+      border: 10px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="header">Header</div>
+    <div class="left">Left Sidebar</div>
+    <div class="middle">
+      <div class="middle-top">Middle Top</div>
+      <div class="middle-bottom">Middle Bottom</div>
+    </div>
+    <div class="right">Right Sidebar</div>
+  </div>
+</body>
+</html>

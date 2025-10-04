@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Personal Portfolio</title>
+        <style>
+            body {
+                color: rgb(71, 64, 64);
+                background-color: antiquewhite;
+            }
+
+            header {
+                background-color:rgb(247, 194, 242);
+                box-shadow: 0 2px 5px rgb(102, 100, 100);
+                position: sticky;
+                top: 0;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1100px;
+                margin: auto;
+                padding: 20px;
+                
+            }
+
+            .logo {
+                font-size: 20px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:rgba(183, 4, 238, 0.897);
+            }
+
+            .navbar {
+                display: flex;
+                gap: 20px;
+                
+            }
+
+            .navbar a {
+                color: rgb(44, 41, 41);
+                transition: color 0.5s ease;
+                font-weight: 500;
+                text-decoration: none;
+            }
+
+            .navbar a:hover {
+                color:blue;
+            }
+
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor:pointer;
+            }
+
+            .hamburger span {
+                height: 5px;
+                width: 25px;
+                background-color: #f7bef2;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                transition: all 0.5s ease;
+            }
+
+            .myself {
+                height: 90vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, #b600a7, #ee90e6);
+                text-align: center;
+                padding: 30px;
+            }
+
+            img {
+                height: 400px;
+                width: 400px;
+                border-radius: 500px;
+            }
+
+            .myself h1 {
+                font-size: 50px;
+                font-family: 'Poppins', sans-serif;
+                margin-bottom: 15px;
+            }
+
+            .myself p {
+                margin: 15px ;
+                font-size: 23px;
+            }
+            .resume {
+                display: inline-block;
+                background: white;
+                color:blueviolet;
+                padding: 20px 40px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.5s ease;
+                font-size: large;
+                margin-top: 20px;
+            }
+
+            .resume:hover {
+                background-color: blueviolet;
+                color: white;
+            }
+
+            .me {
+                max-width: 2000px;
+                padding: 35px;
+                text-align: center;
+                background-color: rgb(236, 210, 233);
+            }
+
+            .me h2 {
+                font-size: 30px;
+                margin: 10px;
+                font-family: 'Poppins', sans-serif;
+                color: rgb(182, 34, 157)
+            }
+
+            .me p {
+                margin: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                
+            }
+
+            .skills {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .skills p {
+                background: #ee90e6;
+                padding: 20px 30px;
+                border-radius: 40px;
+                font-weight: 500;
+            }
+
+            .project {
+                background-color: #f7bef2;
+                text-align: center;
+                height: 450px;
+            }
+
+            .project h2 {
+                font-size: 30px;
+                margin-bottom: 30px;
+                margin-top: 10px;
+                color:#910685;
+            }
+
+            .project-card {
+                background-color:beige;
+                display: inline-block;
+                width: 300px;
+                margin: 30px;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: transform 0.5s ease;
+            }
+
+            .project-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .project-card img {
+                width:auto;
+                height: 200px;
+                margin: 30px;
+            }
+
+            .project-card h3 {
+                font-size: 25px;
+                margin: 10px 0;
+            }
+
+            
+
+            #contact {
+                padding: 50px 30px;
+                text-align: center;
+            }
+
+            #contact h1 {
+                color:#f739d7;
+                margin-bottom: 20px;
+            }
+
+            #contact a {
+                color: #f739d7;
+                text-decoration:none;
+            }
+
+            #contact a:hover {
+                text-decoration: underline;
+            }
+
+            footer {
+                background-color: rgb(191, 7, 197);
+                color:azure;
+                text-align:center;
+                padding: 20px;
+                margin-top: 45px;
+            }
+
+            @media (max-width: 768px) {
+                .navbar {
+                    display:none;
+                    flex-direction: column;
+                    background-color: blanchedalmond;
+                    width: 100%;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    text-align: center;
+                    padding: 20px 0;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+
+                .navbar a {
+                    padding: 10px 0;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+
+                .navbar a:last-child {
+                    border-bottom: none;
+                }
+
+                .navbar.active {
+                    display:flex;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+
+                .myself {
+                    padding: 30px 15px;
+                    min-height: auto;
+                }
+
+                .me {
+                    padding: 30px 15px;
+                }
+
+                .project-card {
+                    width: 90%;
+                    flex-direction: column;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav>
+                <div class="logo">
+                    <b>Manasveni Garg</b>
+                </div>
+                <div class="navbar">
+                    <div><a href="#home">Home</a></div>
+                    <div><a href="#about">About</a></div>
+                    <div><a href="#projects">Projects</a></div>
+                    <div><a href="#contact">Contact</a></div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <section id="home" class="myself">
+            <img src="logo.jpeg" alt="Profile Photo">
+            <h1>Hi, I'm Manasveni Garg</h1>
+            <p>CS Student at Scaler School of Technology, Bengaluru, Karnataka</p>
+            <a href="resume.pdf" class="resume">Download Resume</a>
+        </section>
+
+        <section id="about" class="me">
+            <h2>About Me</h2>
+            <p>I am an aspiring technologist and creator with a strong foundation in computer science, evidenced by my proficiency in Java and my enthusiasm for problem-solving.I want to use my analytical and creative skills to build solutions that work well and look great.</p>
+            <div class="skills">
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JAVA</p>
+            </div>
+        </section>
+
+        <section id="projects" class="project">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>PROJECT 1</h3>
+                <img src="project1.png" alt="Project 1 Screenshot">
+                
+                
+                </div>
+            <div class="project-card">
+                <h3>PROJECT 2</h3>
+                <img src="project1.png" alt="Project 2 Screenshot">
+                
+            </div>
+            <div class="project-card">
+                <h3>PROJECT 3</h3>
+                <img src="project1.png" alt="Project 3 Screenshot">
+                
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact</h1>
+            <h2>Email: <a href="mailto:gargmanasveni@gmail.com">gargmanasveni@gmail.com</a></h2>
+            <h2>GitHub: <a href="https://github.com/manasveni10460">https://github.com/manasveni10460</a></h2>
+            <h2>LinkedIn: <a href="www.linkedin.com/in/manasveni-garg-577023372">www.linkedin.com/in/manasveni-garg-577023372</a></h2>
+        </section>
+
+        <footer>
+            <p>© 2025 Manasveni Garg. All rights reserved.</p>
+        </footer>
+
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.navbar');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                 });
+        </script>
+    </body>
+</html>
